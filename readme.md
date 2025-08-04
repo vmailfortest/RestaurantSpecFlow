@@ -22,18 +22,18 @@ This project contains automated API tests for restaurant checkout system.
     ```
 - Run tests
     ```bash
-    dotnet restore
     dotnet test
     ```
 
 ## Assumptions
 - When order time is not specified, bill is calculated without discount.
 - 10% service charge calculated for food only (starters and mains).
+- Number of people is not taken into account.
 
 ## Implementaion specifics
 - PUT /order/{id} request replaces the entire order.
 - Equality of dishes is determined by DishType and OrderedAt time.
-- Each test scenario use X-Test-Id header, so WireMock return different mocked responses on the same endpoints, depending on the flow.
+- Each test scenario use X-Test-Id header, so WireMock returns different mocked responses on the same endpoints, depending on the flow.
 
 ## Project Structure
 ```
